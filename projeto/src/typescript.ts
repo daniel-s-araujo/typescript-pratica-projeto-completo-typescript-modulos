@@ -8,13 +8,19 @@ const lista: number[] = [];
 lista.push(13, 22.5, 22, 89, 1.58);
 
 type Transacao = {
-  tipoTransacao: string;
+  tipoTransacao: TipoTransacao;
   data: Date;
   valor: number;
 };
 
+enum TipoTransacao {
+  DEPOSITO = "Depósito",
+  TRANSFERENCIA = "Transferência",
+  PAGAMENTO_BOLETO = "Pagamento de Boleto",
+}
+
 const novaTransacao: Transacao = {
-  tipoTransacao: "",
+  tipoTransacao: TipoTransacao.DEPOSITO,
   data: new Date(),
   valor: 0,
 };
